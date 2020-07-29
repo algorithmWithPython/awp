@@ -1,1 +1,1 @@
-this is the directory for emma to log codes.
+this is the directory for NICO to log codes.
