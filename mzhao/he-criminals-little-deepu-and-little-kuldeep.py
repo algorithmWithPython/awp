@@ -1,3 +1,5 @@
+# https://www.hackerearth.com/practice/algorithms/sorting/merge-sort/practice-problems/algorithm/criminals-little-deepu-and-little-kuldeep/description/
+
 tc = int(input())
 for _ in range(tc):
     num = int(input())
