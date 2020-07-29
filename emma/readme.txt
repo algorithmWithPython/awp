@@ -1,1 +1,1 @@
-this is the directory for Emma to log codes.
+this is the directory for Hunter to log codes.
