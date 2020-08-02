@@ -3,27 +3,27 @@ def coloring(adj, number_of_nodes, colors):
     number_of_color = len(colors)
 
     def dfs(node):
+        # base case
         if node == number_of_nodes:
-            print_result()
+            print_color()
             return
-        
+
         for i in range(number_of_color):
-            valid = True
-            for j in adj[node]:
-                if node_color[j] == i:
-                    valid = False
+            isValid = True
+            for n in adj[node]:
+                if node_color[n] == i:
+                    isValid = False
                     break
-            if valid:
+            if isValid:
                 node_color[node] = i
                 dfs(node+1)
-                node_color[node] = -1
-
-    def print_result():
-        print("solution:")
-        for i, c in enumerate(node_color):
-            print(f'node {i}: {colors[c]}')
+                node_color[node] = -1 # backtracking
+            
+    def print_color():
+        print("the solution is:")
+        for i in range(len(node_color)):
+            print( f'node {i} has color {colors[node_color[i]]}' )
         print()
-
     dfs(0)
 
 coloring({0: [1,3], 1: [0, 2, 3], 2: [1,3], 3: [0,1,2,4], 4: [3]}, 5, ['Y', 'B', "G"])

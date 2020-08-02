@@ -1,9 +1,11 @@
 def queens(numberOfQueens):
     chess_board = [ ['-']*numberOfQueens for _ in range(numberOfQueens)]
     def dfs(row):
+        # base case
         if row == numberOfQueens:
             print_chess_table()
             return
+            
         for c in range(numberOfQueens):
             good_spot =True
             for pre_row in range(row):

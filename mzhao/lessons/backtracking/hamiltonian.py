@@ -2,6 +2,7 @@ def hamiltonian_cycle(adj, number_of_nodes, s):
     path = []
 
     def dfs():
+        # base case
         if len(path) == number_of_nodes:
             if s in adj[path[-1]]:
                 print_path()
