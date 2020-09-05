@@ -10,6 +10,7 @@ def knapsack(bag_weight, item_weights, item_values):
                 dp[i][j] = max(dp[i-1][j], dp[i-1][j-item_weights[i-1]]+item_values[i-1])
     return dp[l][bag_weight]
 
+# reduce space complexity
 def knapsack1(bag_weight, item_weights, item_values):
     l = len(item_values)
     #base case dp[0][0]
@@ -32,5 +33,3 @@ print(knapsack1(bag_weight, item_weights, item_values))
 # item 1      6       6       6       6       6
 # item 2      6       10      16      16      16     
 # item 3      6       10      12      18      22     
-
-

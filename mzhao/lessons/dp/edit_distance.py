@@ -17,7 +17,6 @@ def solution(dp, a, b):
             res.append(f'insert {insert} in b, \na is {a:>{string_len}}, \nb is {b:>{string_len}}')
             r-=1
         elif dp[r][c] == dp[r][c-1]+1:
-            print(f'b[c-1]: {c-1}')
             delete = b[c-1]
             b = b[:c-1] + b[c:]
             res.append(f'delete {delete} in b, \na is {a:>{string_len}}, \nb is {b:>{string_len}}')
@@ -51,7 +50,9 @@ def ed(a, b):
 
     for i in range(1, la+1):
         for j in range(1, lb+1):
-            dp[i][j] = min( dp[i-1][j]+1, dp[i][j-1]+1, dp[i-1][j-1] + (1 if a[i-1]!=b[j-1] else 0) )
+            dp[i][j] = min( dp[i-1][j]+1, 
+                            dp[i][j-1]+1, 
+                            dp[i-1][j-1] + (1 if a[i-1]!=b[j-1] else 0) )
 
     fprint(dp)
     fprint(solution(dp, a, b))
